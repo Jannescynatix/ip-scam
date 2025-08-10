@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin-Bereich</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Besucherprotokoll</h1>
+<div id="visitors"></div>
+<script>
+    fetch('/api/visits')
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById('visitors').innerHTML =
+                data.map(v => `<p><b>IP:</b> ${v.ip} | <b>Zeit:</b> ${v.timestamp}</p>`).join('');
+        });
+</script>
+</body>
+</html>

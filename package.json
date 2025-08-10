@@ -1,10 +1,12 @@
 {
-  "name": "${PROJECT_NAME}",
+  "name": "ip-tracker",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "private": true
+  "dependencies": {
+    "basic-auth": "^2.0.1",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2"
+  }
 }
